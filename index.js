@@ -1,8 +1,15 @@
 const hamburger = document.querySelector(".hamburger");
-const list = document.querySelectorAll(".container-list-hamburger");
 
 hamburger.addEventListener("click", function () {
-  list.forEach(function(item) {
-    item.classList.add("is-active");
-  });
+  hamburger.classList.toggle("is-active");
+});
+document.addEventListener("scroll", function () {
+  if (hamburger.classList.contains("is-active")) {
+    hamburger.classList.remove("is-active");
+  }
+});
+window.addEventListener("resize", function () {
+  if (hamburger.classList.contains("is-active")) {
+    hamburger.classList.remove("is-active");
+  }
 });
